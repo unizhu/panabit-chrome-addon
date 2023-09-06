@@ -26,6 +26,10 @@
 
 Relase 发布链接暂无， 要上架 Chrome Store 才有
 
+打开 Chrome 的 开发者模式
+
+![img](images/devmode.png)
+
 手工安装，下载这个 Repo 后，在 Chrome 的插件里选择打开这个文件夹
 
 ![img](images/add2chrome.png)
