@@ -3,14 +3,35 @@ chrome.windows.getCurrent(function (currentWindow) {
         
         chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             if (tab.url?.startsWith("chrome://")) return undefined;
-            let _domains = {};
-            //chrome.windows.getCurrent(function (currentWindow) { 
-                chrome.storage.sync.get(['domains'], function(data) {
-                    if (data.domains && data.domains.length) {
-                        _domains = data.domains;
-                    }
-                });
-            //});
+            let _domains = {}; 
+            chrome.storage.sync.get(['domains'], function(data) {
+                if (data.domains && data.domains.length) {
+                    _domains = data.domains;
+                }
+            });
+            
+            // chrome.runtime.sendNativeMessage(
+            //     'com.uni.pa.traceroute',
+            //     {text: "8.8.8.8"},
+            //     function (response) {
+            //         if (chrome.runtime.lastError) {
+            //             console.log("ERROR: " + chrome.runtime.lastError.message);
+            //         } else {
+            //             console.log('Received ' + response);
+            //         }
+            //     }
+            // );
+
+            let port = chrome.runtime.connectNative('com.uni.pa.traceroute');
+            console.log('Init Connected?',port);
+            port.onMessage.addListener(function (msg) {
+                console.log('Received' + msg);
+            });
+            port.onDisconnect.addListener(function () {
+                console.log('Disconnected');
+            });
+            console.log('Prepare Connected?',port);
+            port.postMessage({text: '8.8.8.8'});
             if (tab.active && ( tab.title === "Panabit" || _domains.hasOwnProperty((new URL(tab.url)).hostname ))) {
                 chrome.scripting.executeScript({
                     target: {tabId: tabId, allFrames: true},

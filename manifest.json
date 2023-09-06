@@ -4,7 +4,7 @@
     "manifest_version": 3,
     "description": "For Panabit Devices",
     "host_permissions": ["https://*/*","https://api.macvendors.com/*","https://www.macvendorlookup.com/api/v2/*"],
-    "permissions": ["webRequest","activeTab", "scripting","declarativeNetRequest", "declarativeNetRequestWithHostAccess","declarativeNetRequestFeedback","tabs","storage"],
+    "permissions": ["webRequest","activeTab", "scripting","declarativeNetRequest", "nativeMessaging","declarativeNetRequestWithHostAccess","declarativeNetRequestFeedback","tabs","storage"],
     "background": {
       "service_worker": "service_worker.js"
     },
