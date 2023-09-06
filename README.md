@@ -24,15 +24,16 @@
 
 ### 1.2 安装工具插件
 
-- Relase 发布链接暂无， 要上架 Chrome Store 才有 (目前在验证付款中)
+- Release 发布链接暂无， 要上架 Chrome Store 才有 (目前在验证付款中)
 
 - 手工安装
 
 1. 手工安装，[点击下载这个插件Zip包](https://github.com/unizhu/panabit-chrome-addon/archive/refs/heads/main.zip)
 2. 解压缩这个文件夹至某个目录
-3. 打开 Chrome 的 开发者模式
+3. 打开 Chrome 插件/Extension 的 开发者模式
 
 ![img](images/devmode.png)
+如果找不到，直接浏览器地址栏输入 `chrome://extensions/` [chrome://extensions/](chrome://extensions/)
 4. 在 Chrome 的插件里选择打开这个文件夹
 
 ![img](images/add2chrome.png)
@@ -50,12 +51,13 @@
 
 [去 maclookup.app 申请一个 key](https://my.maclookup.app/)
 
-然后填进去
+然后填进到 API Key 里
 
 ![img](images/apikey.png)
 
 ```text
-    注意：如果不填 key 也能用，但是会有一堆 HTTP 429 的返回，就是限制请求数量
+    - 注意：如果不填 api key 也能用，但是会有一堆 HTTP 429 的返回，就是服务器限制请求数量的意思
+    - 请求过的 MAC 地址会缓存到本地，不会重复请求
 ```
 
 ### 2.2 填写需要应用插件的域名或者 IP
@@ -71,4 +73,4 @@
 
 - Known Issue: 验证配置的 ip 地址还有点小毛病
   
-- 其他请去 Issues 里提
+- 其他请去 [Issues](https://github.com/unizhu/panabit-chrome-addon/issues) 里提
