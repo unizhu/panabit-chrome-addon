@@ -1,1 +1,116 @@
-const _0x2ddf23=_0x1ab1;(function(_0x1e3498,_0x5095d2){const _0x5074c6=_0x1ab1,_0x4bef17=_0x1e3498();while(!![]){try{const _0x49a94b=parseInt(_0x5074c6(0x20d))/0x1*(parseInt(_0x5074c6(0x1e3))/0x2)+-parseInt(_0x5074c6(0x1e7))/0x3+-parseInt(_0x5074c6(0x1e2))/0x4+parseInt(_0x5074c6(0x1e5))/0x5*(parseInt(_0x5074c6(0x206))/0x6)+parseInt(_0x5074c6(0x1f1))/0x7+-parseInt(_0x5074c6(0x1f7))/0x8*(parseInt(_0x5074c6(0x20b))/0x9)+-parseInt(_0x5074c6(0x212))/0xa*(-parseInt(_0x5074c6(0x1ed))/0xb);if(_0x49a94b===_0x5095d2)break;else _0x4bef17['push'](_0x4bef17['shift']());}catch(_0x14b1cc){_0x4bef17['push'](_0x4bef17['shift']());}}}(_0x43ec,0x76bce),document['addEventListener'](_0x2ddf23(0x211),function(){const _0x4d24f5=_0x2ddf23;M[_0x4d24f5(0x210)]();}));function validateIPv6(_0x344b2e){const _0x394515=_0x2ddf23;if(!/^[0-9a-fA-F]{1,4}:([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/[_0x394515(0x1fb)](_0x344b2e))return![];return!![];}function validateDomain(_0x399608){const _0x59e829=_0x2ddf23;if(!/^[a-zA-Z0-9-]{1,63}(\.[a-zA-Z0-9-]{1,63})+$/[_0x59e829(0x1fb)](_0x399608))return![];return!![];}function _0x43ec(){const _0x10ff62=['getElementById','Remove','test','runtime','toast','sync','save','from','map','div','domain-list','addEventListener','storage','6beFsft','validate','forEach','domains','input','305127prOaKc','querySelectorAll','1rODVgu','api_key','onload','AutoInit','DOMContentLoaded','3830dDYNXe','className','btn\x20waves-effect\x20waves-light\x20red\x20darken-2','apiKey','value','set','green\x20darken-1','lastError','1448152UARtVB','1028506wUkLvQ','createElement','4243805DENRTF','red\x20darken-1','694341BLgrwF','Invalid\x20IP\x20or\x20Domain!','ipv6','button','click','removeChild','14861xPwJrM','appendChild','add-domain','invalid','1040704vHDwcD','row','domain','input-field\x20col\x20s5','error','onblur','224GyOIcR','classList'];_0x43ec=function(){return _0x10ff62;};return _0x43ec();}function _0x1ab1(_0x7fee33,_0x3ecb30){const _0x43ec1e=_0x43ec();return _0x1ab1=function(_0x1ab1e0,_0x595995){_0x1ab1e0=_0x1ab1e0-0x1db;let _0x2ab7f5=_0x43ec1e[_0x1ab1e0];return _0x2ab7f5;},_0x1ab1(_0x7fee33,_0x3ecb30);}function validateIPv4(_0x3d8624){const _0x6f6c88=_0x2ddf23;if(!/^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/[_0x6f6c88(0x1fb)](_0x3d8624))return![];return!![];}function validateInput(_0x57e6b1){const _0x198afa=_0x2ddf23;if(validateIPv6(_0x57e6b1))return _0x198afa(0x1e9);else{if(validateIPv4(_0x57e6b1))return'ipv4';else return validateDomain(_0x57e6b1)?_0x198afa(0x1f3):![];}}function addDomainInput(_0x248846='',_0x5cec50=!![]){const _0x39dacc=_0x2ddf23,_0x2de844=document[_0x39dacc(0x1f9)](_0x39dacc(0x203)),_0x9734df=document[_0x39dacc(0x1e4)]('div');_0x9734df[_0x39dacc(0x1db)]=_0x39dacc(0x1f2);const _0x40bfde=document[_0x39dacc(0x1e4)](_0x39dacc(0x202));_0x40bfde[_0x39dacc(0x1db)]=_0x39dacc(0x1f4);const _0x4113ba=document[_0x39dacc(0x1e4)]('input');_0x4113ba['type']='text',_0x4113ba['className']=_0x39dacc(0x207),_0x4113ba[_0x39dacc(0x1de)]=_0x248846,_0x4113ba[_0x39dacc(0x1f6)]=function(){const _0x4f7b69=_0x39dacc;!validateInput(this['value'])?(this[_0x4f7b69(0x1f8)]['add'](_0x4f7b69(0x1f0)),M[_0x4f7b69(0x1fd)]({'html':_0x4f7b69(0x1e8),'classes':_0x4f7b69(0x1e6)})):this[_0x4f7b69(0x1f8)]['remove'](_0x4f7b69(0x1f0));},_0x40bfde[_0x39dacc(0x1ee)](_0x4113ba),_0x9734df[_0x39dacc(0x1ee)](_0x40bfde);if(_0x5cec50){const _0x3d22d0=document[_0x39dacc(0x1e4)](_0x39dacc(0x1ea));_0x3d22d0['className']=_0x39dacc(0x1dc),_0x3d22d0['innerHTML']=_0x39dacc(0x1fa),_0x3d22d0['onclick']=function(){const _0x2bfc16=_0x39dacc;_0x2de844[_0x2bfc16(0x1ec)](_0x9734df);},_0x9734df[_0x39dacc(0x1ee)](_0x3d22d0);}_0x2de844[_0x39dacc(0x1ee)](_0x9734df);}document['getElementById'](_0x2ddf23(0x1ef))[_0x2ddf23(0x204)]('click',function(){addDomainInput();}),document[_0x2ddf23(0x1f9)](_0x2ddf23(0x1ff))[_0x2ddf23(0x204)](_0x2ddf23(0x1eb),function(){const _0x49e4f6=_0x2ddf23,_0x13f071=document[_0x49e4f6(0x1f9)](_0x49e4f6(0x20e))[_0x49e4f6(0x1de)],_0x59e63c=document[_0x49e4f6(0x1f9)](_0x49e4f6(0x203))[_0x49e4f6(0x20c)](_0x49e4f6(0x20a)),_0x3bec77=Array[_0x49e4f6(0x200)](_0x59e63c)[_0x49e4f6(0x201)](_0x2a5230=>_0x2a5230[_0x49e4f6(0x1de)]);chrome[_0x49e4f6(0x205)][_0x49e4f6(0x1fe)][_0x49e4f6(0x1df)]({'apiKey':_0x13f071,'domains':_0x3bec77}),chrome[_0x49e4f6(0x1fc)][_0x49e4f6(0x1e1)]?console[_0x49e4f6(0x1f5)](chrome[_0x49e4f6(0x1fc)]['lastError']):M[_0x49e4f6(0x1fd)]({'html':'Saved!','classes':_0x49e4f6(0x1e0)});}),window[_0x2ddf23(0x20f)]=function(){const _0x39d645=_0x2ddf23;chrome[_0x39d645(0x205)][_0x39d645(0x1fe)]['get']([_0x39d645(0x1dd),_0x39d645(0x209)],function(_0x381d2c){const _0x29e389=_0x39d645;_0x381d2c[_0x29e389(0x1dd)]&&(document['getElementById'](_0x29e389(0x20e))[_0x29e389(0x1de)]=_0x381d2c[_0x29e389(0x1dd)]),_0x381d2c[_0x29e389(0x209)]&&_0x381d2c[_0x29e389(0x209)]['length']&&_0x381d2c[_0x29e389(0x209)][_0x29e389(0x208)]((_0x10998d,_0x311b91)=>{const _0x3d1dca=_0x29e389;_0x311b91===0x0?document['querySelector']('#domain-list\x20input')[_0x3d1dca(0x1de)]=_0x10998d:addDomainInput(_0x10998d);});});};
+document.addEventListener('DOMContentLoaded', function() {
+    M.AutoInit(); // This initializes all Materialize components
+});
+
+function validateIPv6(address) {
+    if (!/^[0-9a-fA-F]{1,4}:([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/.test(address)) {
+      return false;
+    }
+    return true;
+}
+
+function validateDomain(domain) {
+    if (!/^[a-zA-Z0-9-]{1,63}(\.[a-zA-Z0-9-]{1,63})+$/.test(domain)) {
+        return false;
+    }
+    return true;
+}
+
+function validateIPv4(address) {
+    if (!/^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/.test(address)) {
+        return false;
+    }
+    return true;
+}
+
+function validateInput(input) {
+    if (validateIPv6(input)) {
+        return "ipv6";
+    } else if (validateIPv4(input)) {
+        return "ipv4";
+    } else if (validateDomain(input)) {
+        return "domain";
+    } else {
+        return false;
+    }
+}
+
+function addDomainInput(value = "", removable = true) {
+    const domainList = document.getElementById("domain-list");
+    const newRow = document.createElement("div");
+    newRow.className = "row";
+
+    const newField = document.createElement("div");
+    newField.className = "input-field col s5";
+
+    const newInput = document.createElement("input");
+    newInput.type = "text";
+    newInput.className = "validate";
+    newInput.value = value;
+    newInput.onblur = function() { 
+        if(!validateInput(this.value)) {
+            this.classList.add("invalid");
+            M.toast({html: 'Invalid IP or Domain!', classes: 'red darken-1'});
+        } else {
+            this.classList.remove("invalid");
+        }
+    }
+    newField.appendChild(newInput);
+    newRow.appendChild(newField);
+
+    if (removable) {
+        const removeButton = document.createElement("button");
+        removeButton.className = "btn waves-effect waves-light red darken-2";
+        removeButton.innerHTML = "Remove";
+        removeButton.onclick = function() {
+            domainList.removeChild(newRow);
+        }
+        newRow.appendChild(removeButton);
+    }
+
+    domainList.appendChild(newRow);
+}
+
+document.getElementById("add-domain").addEventListener("click", function() {
+    addDomainInput();
+});
+
+document.getElementById("save").addEventListener("click", function() {
+    const apiKey = document.getElementById("api_key").value;
+    const domainInputs = document.getElementById("domain-list").querySelectorAll("input");
+    const domains = Array.from(domainInputs).map(input => input.value);
+
+    chrome.storage.sync.set({ apiKey, domains });
+    if (chrome.runtime.lastError) {
+        console.error(chrome.runtime.lastError);
+    } else {
+        // Use Materialize toast component to show "saved" message
+        M.toast({html: 'Saved!', classes: 'green darken-1'});
+    }
+});
+
+window.onload = function() {
+    chrome.storage.sync.get(['apiKey', 'domains'], function(data) {
+        if (data.apiKey) {
+            document.getElementById("api_key").value = data.apiKey;
+        }
+        if (data.domains && data.domains.length) {
+            data.domains.forEach((domain, index) => {
+                if (index === 0) {
+                    document.querySelector("#domain-list input").value = domain;
+                } else {
+                    addDomainInput(domain);
+                }
+            });
+        }
+    });
+    //TODO: Check if CROS extension is installed
+    // const CROSID = 'lhobafahddgcelffkeicbaginigeejlf';
+
+    // chrome.runtime.sendMessage(CROSID, 'version', response => {
+    //     if (response) {
+    //         console.log("Found CROS extension!");
+    //         document.getElementById("cors-check").innerText = "Installed";
+    //     }
+    // });
+}
