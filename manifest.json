@@ -4,12 +4,13 @@
     "manifest_version": 3,
     "description": "For Panabit Devices",
     "host_permissions": ["https://*/*","https://api.macvendors.com/*","https://www.macvendorlookup.com/api/v2/*"],
-    "permissions": ["webRequest","activeTab", "scripting","declarativeNetRequest", "declarativeNetRequestWithHostAccess","declarativeNetRequestFeedback","tabs","contextMenus", "webNavigation","storage"],
+    "permissions": ["webRequest","activeTab", "scripting","declarativeNetRequest", "declarativeNetRequestWithHostAccess","declarativeNetRequestFeedback","tabs","storage"],
     "background": {
       "service_worker": "service_worker.js"
     },
     "action": {
       "default_icon": {
+          "256": "./images/panabit256.png",
           "128": "./images/panabit128.png",
           "64": "./images/panabit64.png",
           "32": "./images/panabit32.png",
