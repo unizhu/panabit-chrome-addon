@@ -33,8 +33,9 @@
 3. 打开 Chrome 插件/Extension 的 开发者模式
 
 ![img](images/devmode.png)
-如果找不到，直接浏览器地址栏输入 `chrome://extensions/` [chrome://extensions/](chrome://extensions/)
-4. 在 Chrome 的插件里选择打开这个文件夹
+
+3.1 如果找不到，直接浏览器地址栏输入 `chrome://extensions/` [chrome://extensions/](chrome://extensions/)
+3.2 在 Chrome 的插件里选择打开这个文件夹
 
 ![img](images/add2chrome.png)
 
