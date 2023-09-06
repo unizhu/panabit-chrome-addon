@@ -20,6 +20,7 @@ chrome.windows.getCurrent(function (currentWindow) {
                             console.log("Panabit");
                             let macTds = document.querySelectorAll('td[data-field="mac"]');
                             if(macTds.length === 0)  macTds = document.querySelectorAll('td[data-field="amac"]');
+                            let hostTds = document.querySelectorAll('td[data-field="host"],td[data-field="req_obj"]');
                             function appendTdChild(macTd,mac,response){
                                 let node = document.createElement("p");
                                 node.setAttribute("class","abtn");
@@ -94,6 +95,27 @@ chrome.windows.getCurrent(function (currentWindow) {
                                             });
                                             */
                                         //};
+                                    }
+                                });
+                            }
+                            if(hostTds.length > 0) {
+                                hostTds.forEach(hostTd => {
+                                    let host = hostTd.innerText;
+                                    if(host !=='' && /^[a-zA-Z0-9-]{1,63}(\.[a-zA-Z0-9-]{1,63})+$/.test(host) 
+                                        && host.startsWith("10.") === false && host.startsWith("192.168.") === false 
+                                        && host.startsWith("172.") === false) {
+                                        (function() { 
+                                            let node = document.createElement("p");
+                                            let virusTotal = document.createElement("a");
+                                            virusTotal.setAttribute("href","https://www.virustotal.com/gui/domain/"+encodeURIComponent(host));
+                                            virusTotal.setAttribute("target","_blank");
+                                            virusTotal.innerText = "Check On VirusTotal";
+                                            virusTotal.setAttribute("class","abtn");
+                                            virusTotal.setAttribute("style","font-size:10px;");
+                                            node.appendChild(virusTotal);
+                                            if(hostTd.querySelectorAll('p') > 0) hostTd.removeChild(hostTd.lastChild);
+                                            hostTd.appendChild(node);
+                                        })();
                                     }
                                 });
                             }
