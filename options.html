@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Settings Page</title>
+    <link rel="icon" href="./images/panabit64.png" type="image/x-png">
+    <link href="https://google-fonts.mirrors.sjtug.sjtu.edu.cn/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://google-fonts.mirrors.sjtug.sjtu.edu.cn/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/materialize.min.css">
+    <script src="./js/materialize.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <center><img src="./images/panabit64.png"/></center>
+    </div>
+    <h4>API &amp; IP / Domains Settings</h4>
+    <p>Configure your API settings, including your API key and allowed domains.</p>
+    <div><hr/></div>
+    <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <h4>Prerequisites</h4>
+                <p>This Extention requires Cross Domain Request , However , Chrome does not allow Cross Domain Request by default.</p>
+                <p>So , You need to install a Chrome Extension called 
+                    <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf">Allow CORS: Access-Control-Allow-Origin</a> 
+                    to enable Cross Domain Request.
+                </p>
+                <p>
+                    Or you can install similar extension from Chrome Store.
+                </p>
+                <p style="color: grey;">
+                    TODO: Checking Allow CORS : <span id="cors-check">Not Installed</span>
+                </p>
+            </div>
+            <div class="card-action">
+              <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf" target="_blank">Intall Extension</a>
+              <a href="https://chrome.google.com/webstore/search/cross%20domain" target="_blank">Search Chrome Store</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <h5> Recommendation </h5>
+    <p>API Key is optional , But still recommed to register an API key from <a href="https://my.maclookup.app/" target="_blank">https://my.maclookup.app/</a></p>
+
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="api_key" type="text" class="validate">
+            <label for="api_key">API Key</label>
+        </div>
+    </div>
+    <div><hr/></div>
+    <h5> IP &amp; Domains </h5>
+    <p> E.g. 
+        <span class="purple lighten-5 z-depth-1"><i class="tiny material-icons">beach_access</i>192.168.0.200</span> for IPv4 , 
+        <span class="purple lighten-5 z-depth-1"><i class="tiny material-icons">beach_access</i>2001:0000:130F:0000:0000:09C0:876A:130B</span> for IPv6 , 
+        <span class="purple lighten-5 z-depth-1"><i class="tiny material-icons">beach_access</i>my.server.example.com</span> for Domain</p>
+    <div id="domain-list">
+        <div class="row">
+            <div class="input-field col s5">
+                <input type="text" class="validate" required>
+                <label>Allowed Domain (Required)</label>
+            </div>
+        </div>
+    </div>
+    
+    <button id="add-domain" class="btn waves-effect waves-light">
+        Add Domain
+        <i class="material-icons right">add</i>
+    </button>
+
+    <button id="save" class="btn waves-effect waves-light blue darken-1">
+        Save
+        <i class="material-icons right">save</i>
+    </button>
+
+    <div>
+        <hr/>
+        
+    </div>
+</div>
+<script src="./js/options.js"></script>
+</body>
+<footer class="page-footer">
+    <div class="container">
+      <div class="row">
+          <h5 class="white-text">Development &amp; Issues</h5>
+          <p class="grey-text text-lighten-4">Just for Panabit Player</p>
+          <p class="grey-text text-lighten-4"><a href="#">Github Repo</a></p>
+          <p class="grey-text text-lighten-4"><a href="#">Submit an Issue</a></p>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      2023 @unizhu , @unisback CopyLeft
+      </div>
+    </div>
+</footer>
+</html>
