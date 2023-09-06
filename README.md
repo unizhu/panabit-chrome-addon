@@ -34,8 +34,8 @@
 
 ![img](images/devmode.png)
 
-3.1 如果找不到，直接浏览器地址栏输入 `chrome://extensions/` [chrome://extensions/](chrome://extensions/)
-3.2 在 Chrome 的插件里选择打开这个文件夹
+1. 如果找不到，直接浏览器地址栏输入 `chrome://extensions/` [chrome://extensions/](chrome://extensions/)
+2. 在 Chrome 的插件里选择打开这个文件夹
 
 ![img](images/add2chrome.png)
 
