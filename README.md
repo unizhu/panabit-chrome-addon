@@ -24,19 +24,25 @@
 
 ### 1.2 安装工具插件
 
-Relase 发布链接暂无， 要上架 Chrome Store 才有
+- Relase 发布链接暂无， 要上架 Chrome Store 才有 (目前在验证付款中)
 
-打开 Chrome 的 开发者模式
+- 手工安装
+
+1. 手工安装，[点击下载这个插件Zip包](https://github.com/unizhu/panabit-chrome-addon/archive/refs/heads/main.zip)
+2. 解压缩这个文件夹至某个目录
+3. 打开 Chrome 的 开发者模式
 
 ![img](images/devmode.png)
-
-手工安装，下载这个 Repo 后，在 Chrome 的插件里选择打开这个文件夹
+4. 在 Chrome 的插件里选择打开这个文件夹
 
 ![img](images/add2chrome.png)
 
 ## 2. 配置插件
 
-安装好以后在 Chrome 插件里 选择 配置/Option
+1. 点击装好插件的图标，对，就是那把雨伞。点击里面的 `Open Options` 按钮
+
+![img](images/popup.png)
+2. 或者安装好以后在 Chrome 插件里 选择 配置/Option
 
 ![Find Option](images/option.png)
 
@@ -58,7 +64,7 @@ Relase 发布链接暂无， 要上架 Chrome Store 才有
 
 ```markdown
     + 注意：如果不填 IP 也能用，但是最好填一个, 不然就是只判断网页名叫Panabit的窗口
-    - 也支持 IPv6 和 域名
+    + 也支持 IPv6 和 域名
 ```
 
 ### 3 Issues
