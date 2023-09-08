@@ -1,12 +1,42 @@
+
+
+//chrome.window.traceroute = function() {
+//     let port = chrome.runtime.connectNative('com.uni.pa.traceroute');
+//     port.onMessage.addListener(function (msg) {
+//         console.log('Received' + msg);
+//     });
+//     port.onDisconnect.addListener(function () {
+//         console.log('Disconnected');
+//     });
+//     port.postMessage({text: '114.114.114.114'});
+// };
+
+
 chrome.windows.getCurrent(function (currentWindow) {
-    chrome.tabs.query({active: true, windowId: currentWindow.id}, function(activeTabs) {
-        
+    chrome.tabs.query({active: true, windowId: currentWindow.id}, function(activeTabs) {       
         chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             if (tab.url?.startsWith("chrome://")) {
                 console.log("chrome:// detected");
                 return undefined;
             } 
-            //console.log("tab.title",);      
+            let port = chrome.runtime.connectNative('com.unipa.traceroute');
+            chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+            if (message.type === 'traceroute') {
+                port.postMessage({ text: message.domain });
+            }
+            });
+            //traceroute();
+            //console.log("_traceroute",traceroute());
+            // chrome.runtime.sendNativeMessage(
+            //     'com.unipa.traceroute',
+            //     {text: '114.114.114.114'},
+            //     function (response) {
+            //         console.log('Received ' + response);
+            //     }
+            // );
+            chrome.runtime.sendMessage({ type: 'traceroute', domain: '223.5.5.5' }, (response) => {
+                console.log(response);
+            });
             if (tab.active && tab.title.startsWith("Panabit")) {
                 chrome.scripting.executeScript({
                     target: {tabId: tabId, allFrames: true},
@@ -24,10 +54,24 @@ chrome.windows.getCurrent(function (currentWindow) {
                             }
                             getSyncData(tab)
                             .then((result) => {
-                                //console.log("Operation completed:", result);
-                                console.log("domain detected",_domains);
+                                // chrome.webRequest.onCompleted.addListener(function(details) {
+                                //     console.log("onCompleted",details);
+                                // }, {
+                                //     urls: ["<all_urls>"],
+                                //     types: ['xmlhttprequest']
+                                // });
+                                // chrome.runtime.sendNativeMessage(
+                                //     'com.uni.pa.traceroute',
+                                //     {text: '114.114.114.114'},
+                                //     function (response) {
+                                //         console.log('Received ' + response);
+                                //     }
+                                // );
+
+                                
+
+
                                 if(_domains.indexOf(window.location.hostname) < 0){
-                                //if(!(_domains.indexOf((new URL(tab.url)).hostname ) > -1)){
                                     console.log("not panabit");
                                     return undefined;
                                 }
@@ -137,7 +181,7 @@ chrome.windows.getCurrent(function (currentWindow) {
                                 }
                             })
                             .catch((error) => {
-                                console.error("Load Panabit Config Error:", error);
+                                console.log("Load Panabit Config Error:", error);
                             }); 
                         //}
                     }

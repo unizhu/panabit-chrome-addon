@@ -1,0 +1,7 @@
+{
+    "name": "com.unipa.traceroute",
+    "description": "Traceroute For Chrome",
+    "path": "/Applications/traceroute-chrome",
+    "type": "stdio",
+    "allowed_origins": ["chrome-extension://eonkhedhepadnhfdbaedjgbohbkneena/"]
+}

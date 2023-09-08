@@ -1,48 +1,43 @@
 #include <iostream>
-#include <cstdio>
-#include <cstring>
-#include <cstdint>
-#include <sstream>
+#include <string>
+#include <cstdlib>
+#include <array>
 
-void sendMessageToChromeExtension(const std::string &message) {
-    // First, send the size of the message
-    uint32_t size = message.size();
-    fwrite(&size, sizeof(uint32_t), 1, stdout);
-
-    // Next, send the actual message
-    fwrite(message.c_str(), sizeof(char), size, stdout);
-    fflush(stdout);
-}
-
-void traceroute(const std::string &target) {
-    std::string command = "traceroute " + target;
-    char buffer[128];
-
-    FILE *pipe = popen(command.c_str(), "r");
-    if (!pipe) {
-        sendMessageToChromeExtension("Failed to run traceroute.");
-        return;
-    }
-
-    while (!feof(pipe)) {
-        if (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
-            sendMessageToChromeExtension(buffer);
-        }
-    }
-    pclose(pipe);
+void sendNativeMessage(const std::string& message) {
+    uint32_t len = message.size();
+    std::array<char, 4> lenArr;
+    lenArr[0] = len & 0xff;
+    lenArr[1] = (len >> 8) & 0xff;
+    lenArr[2] = (len >> 16) & 0xff;
+    lenArr[3] = (len >> 24) & 0xff;
+    std::cout.write(lenArr.data(), 4);
+    std::cout << message;
 }
 
 int main() {
-    // Read the message length
-    uint32_t messageSize;
-    fread(&messageSize, sizeof(uint32_t), 1, stdin);
+    std::cout << "";
+    uint32_t length;
+    std::cin.read(reinterpret_cast<char*>(&length), 4);
 
-    // Read the actual message
-    std::string message;
-    message.resize(messageSize);
-    fread(&message[0], sizeof(char), messageSize, stdin);
+    std::string input(length, '\0');
+    std::cin.read(&input[0], length);
 
-    traceroute(message);
+    // Extract the domain from the input (here it's assumed to be the full input string)
+    std::string domain = input;
 
+    // Run traceroute
+    FILE* pipe = popen(("traceroute " + domain).c_str(), "r");
+    if (!pipe) {
+        sendNativeMessage("Error: could not perform traceroute.");
+        return 1;
+    }
+
+    // Read traceroute output line by line and send it to Chrome
+    char buffer[128];
+    while (fgets(buffer, 128, pipe)) {
+        sendNativeMessage(buffer);
+    }
+
+    pclose(pipe);
     return 0;
 }
