@@ -19,12 +19,12 @@ chrome.windows.getCurrent(function (currentWindow) {
                 console.log("chrome:// detected");
                 return undefined;
             } 
-            let port = chrome.runtime.connectNative('com.unipa.traceroute');
-            chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-            if (message.type === 'traceroute') {
-                port.postMessage({ text: message.domain });
-            }
-            });
+            //let port = chrome.runtime.connectNative('com.unipa.traceroute');
+            // chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+            // if (message.type === 'traceroute') {
+            //     port.postMessage({ text: message.domain });
+            // }
+            // });
             //traceroute();
             //console.log("_traceroute",traceroute());
             // chrome.runtime.sendNativeMessage(
@@ -34,9 +34,9 @@ chrome.windows.getCurrent(function (currentWindow) {
             //         console.log('Received ' + response);
             //     }
             // );
-            chrome.runtime.sendMessage({ type: 'traceroute', domain: '223.5.5.5' }, (response) => {
-                console.log(response);
-            });
+            // chrome.runtime.sendMessage({ type: 'traceroute', domain: '223.5.5.5' }, (response) => {
+            //     console.log(response);
+            // });
             if (tab.active && tab.title.startsWith("Panabit")) {
                 chrome.scripting.executeScript({
                     target: {tabId: tabId, allFrames: true},
@@ -44,7 +44,7 @@ chrome.windows.getCurrent(function (currentWindow) {
                             let _domains = {}; 
                             function getSyncData(tab) {
                                 return new Promise((resolve, reject) => {
-                                    chrome.storage.local.get(['domains'], function(data) {
+                                    chrome.storage.sync.get(['domains'], function(data) {
                                         if (data.domains && data.domains.length) {
                                             _domains = data.domains;
                                             resolve(_domains);             

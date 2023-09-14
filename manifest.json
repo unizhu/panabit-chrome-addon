@@ -1,5 +1,5 @@
 {
-    "name": "Panabit Mac To Manufacturer",
+    "name": "Panabit Chrome Toolkits",
     "version": "0.2",
     "manifest_version": 3,
     "description": "For Panabit Devices",
@@ -17,7 +17,7 @@
           "24": "./images/panabit24.png",
           "16": "./images/panabit16.png"
       },
-      "default_popup": "popup.html"
+      "default_popup": "options.html"
     },
     "icons": {
         "256": "./images/panabit256.png",
